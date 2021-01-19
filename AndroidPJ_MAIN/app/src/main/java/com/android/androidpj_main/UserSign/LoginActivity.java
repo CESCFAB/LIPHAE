@@ -16,6 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -78,7 +79,7 @@ public class LoginActivity extends Activity {
     String sid, spw, sname, sphone;
     EditText Eid, Epw;
     TextView tvFindPw;
-    TextView tvGoogle, tvKakao;
+    ImageButton tvGoogle, tvKakao;
     TextView tvErrorId, tvErrorPw;
     Button btnLogin, btnSignup;
 
@@ -106,18 +107,18 @@ public class LoginActivity extends Activity {
         // 21.01.11 지은
         //
         ///////////////////////////////////////////////////////////////////////////
-        Button gomain = findViewById(R.id.gomain);
-        gomain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-
-                // PreferenceManager 이메일 보내주기
-                PreferenceManager.setString(LoginActivity.this, "email", "qkrtpa12@naver.com");
-                finish();
-            }
-        });
+//        Button gomain = findViewById(R.id.gomain);
+//        gomain.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(intent);
+//
+//                // PreferenceManager 이메일 보내주기
+//                PreferenceManager.setString(LoginActivity.this, "email", "qkrtpa12@naver.com");
+//                finish();
+//            }
+//        });
         ///----------------------------------------------------------------------------------------------------
 
 
