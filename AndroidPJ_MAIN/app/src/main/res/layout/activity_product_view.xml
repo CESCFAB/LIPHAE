@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".Activity.ProductViewActivity">
+
+
+    <ScrollView
+        android:id="@+id/sv_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20px"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <WebView
+                android:id="@+id/wv_prdimg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                />
+
+            <TextView
+                android:id="@+id/prdBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#BDB9B9"
+                android:layout_marginBottom="10px"
+                />
+            <TextView
+                android:id="@+id/prdName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="#040303"
+
+                />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+            <TextView
+                android:id="@+id/prdPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:textColor="#040303"
+                />
+                <TextView
+                    android:text="원"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#040303"
+                    />
+            </LinearLayout>
+
+            <WebView
+                android:id="@+id/wv_prdDFile"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btn_prdreview"
+                    android:src="@drawable/review"
+                    android:textSize="20dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/white"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"/>
+
+                <TextView
+                    android:text="리뷰보기"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btn_prdview"
+                    android:src="@drawable/barchart"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:background="@color/white"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"/>
+
+                <TextView
+                    android:text="성분보기"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="55dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <WebView
+                android:id="@+id/wv_prdNFile"
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_like"
+            android:layout_marginRight="3dp"
+            android:background="?colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_hate"
+            android:layout_weight="1"
+            />
+         <Button
+            android:id="@+id/btn_buy"
+            android:background="?colorPrimary"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="구매하기"
+             android:textStyle="bold"
+            android:layout_weight="5"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

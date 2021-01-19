@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.androidpj_main">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".UserSign.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activity.OrderFinished"></activity>
+        <activity android:name=".Activity.OrderdetailActivity" />
+        <activity android:name=".Activity.RegisterAddress" />
+        <activity android:name=".Test.TestSub01Activity" />
+        <activity android:name=".Test.TestSub02Activity" />
+        <activity android:name=".Test.TestSub03Activity" />
+        <activity android:name=".Test.TestSub04Activity" />
+        <activity android:name=".Test.TestSub05Activity" />
+        <activity android:name=".Test.TestResultActivity" />
+        <activity android:name=".Activity.AddressWebViewActivity" />
+        <activity android:name=".Activity.PurchaseActivity" />
+        <activity android:name=".Activity.ProductList" />
+        <activity android:name=".Activity.EmptyCartActivity" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <activity android:name=".Activity.CartActivity" />
+        <activity android:name=".Activity.ProductViewActivity" />
+        <activity android:name=".Test.TestMainActivity" />
+        <activity android:name=".Make_Youtube.YoutubeActivity" />
+        <activity android:name=".Make_Youtube.YoutubeViewActivity" />
+        <activity android:name=".Lip.LipMainActivity" />
+        <activity android:name=".UserSign.FindPwActivity" />
+        <activity android:name=".Activity.SearchActivity" />
+        <activity android:name=".UserSign.LoginActivity" />
+        <activity android:name=".Activity.HoneyTipActivity" />
+        <activity android:name=".Activity.MyViewActivity" />
+        <activity android:name=".Activity.ProductSubList" />
+        <activity
+            android:name=".Main.MainActivity"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
