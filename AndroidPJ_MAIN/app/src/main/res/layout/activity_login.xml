@@ -8,6 +8,13 @@
     android:background="@drawable/login"
     tools:context=".UserSign.LoginActivity">
 
+    <Button
+        android:id="@+id/gomain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메인 작업을 위한 버튼"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

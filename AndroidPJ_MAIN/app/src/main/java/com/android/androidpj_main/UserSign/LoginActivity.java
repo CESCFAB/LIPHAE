@@ -107,18 +107,18 @@ public class LoginActivity extends Activity {
         // 21.01.11 지은
         //
         ///////////////////////////////////////////////////////////////////////////
-//        Button gomain = findViewById(R.id.gomain);
-//        gomain.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                startActivity(intent);
-//
-//                // PreferenceManager 이메일 보내주기
-//                PreferenceManager.setString(LoginActivity.this, "email", "qkrtpa12@naver.com");
-//                finish();
-//            }
-//        });
+        Button gomain = findViewById(R.id.gomain);
+        gomain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+
+                // PreferenceManager 이메일 보내주기
+                PreferenceManager.setString(LoginActivity.this, "email", "qkrtpa12@naver.com");
+                finish();
+            }
+        });
         ///----------------------------------------------------------------------------------------------------
 
 
