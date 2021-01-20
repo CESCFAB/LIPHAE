@@ -5,10 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.android.androidpj_main.UserSign.Frmt_Signup_Basic;
-import com.android.androidpj_main.UserSign.Frmt_Signup_Gender;
-import com.android.androidpj_main.UserSign.Frmt_Signup_Tone;
-
 public class TabPagerAdapter extends FragmentPagerAdapter {
 
     int tabCount;
