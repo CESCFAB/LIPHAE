@@ -156,6 +156,7 @@ public class ProductViewActivity extends AppCompatActivity {
 
 
         btn_prdview.setOnClickListener(mClickListener);
+        btn_prdreview.setOnClickListener(mClickListener);
     }
 
 
@@ -205,7 +206,13 @@ public class ProductViewActivity extends AppCompatActivity {
                 case R.id.btn_prdview:
                     PrdDialogFragment dialogFragment = new PrdDialogFragment();
                     dialogFragment.show(getSupportFragmentManager(), "MyFragment");
+                    break;
 
+                case R.id.btn_prdreview:
+                    Intent intent_review = new Intent(ProductViewActivity.this, ProductReviewActivity.class);
+                    intent_review.putExtra("prdNo", prdNo);
+                    startActivity(intent_review);
+                    break;
             }
 
         }
