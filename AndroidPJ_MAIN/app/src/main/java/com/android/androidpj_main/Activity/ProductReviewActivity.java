@@ -20,10 +20,12 @@ import com.android.androidpj_main.Share.ShareVar;
 
 import java.util.ArrayList;
 
+// 21.01.25 지은 완료
 public class ProductReviewActivity extends AppCompatActivity {
 
+    // 상품 번호 띄움
     TextView goods_prdNo;
-
+    // 그 리뷰에 대한 번호 비교 위함
     String prdNo;
 
     final static String TAG = "ProductReviewActivity";
@@ -33,6 +35,8 @@ public class ProductReviewActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     RecyclerView review_recycleView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +44,13 @@ public class ProductReviewActivity extends AppCompatActivity {
 
         goods_prdNo = findViewById(R.id.review_tvprdNo);
 
+        // 상품 번호 받아옴
         Intent intent = getIntent();
         prdNo = intent.getStringExtra("prdNo");
 
         goods_prdNo.setText(prdNo);
 
         review_recycleView = findViewById(R.id.product_review_recycleView);
-
 
 
         urlAddr = "http://" + ShareVar.macIP + ":8080/JSP/ReviewList.jsp?goods_prdNo=" + prdNo;
