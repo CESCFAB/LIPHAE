@@ -176,8 +176,10 @@
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:text="비밀번호 찾기"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="30dp"
+            android:backgroundTint="?colorPrimary"
             android:background="@drawable/btn_border_black"
             android:layout_gravity="bottom"
             />

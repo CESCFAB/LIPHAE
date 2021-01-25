@@ -6,164 +6,169 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/login"
-    android:gravity="center_horizontal"
     tools:context=".UserSign.LoginActivity">
 
     <Button
         android:id="@+id/gomain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메인으로 이동 (건들지 말아주세요) -> 메인작업 해야해요"
+        android:text="메인 작업을 위한 버튼"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            />
-            <EditText
-                android:id="@+id/et_id"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:background="@drawable/et_black"
-                android:gravity="center"
-                android:hint="아이디(e-mail)"
-                android:textColorHint="@color/black"
-                android:singleLine="true"
-                android:lines="1"
-                />
-
-            <TextView
-                    android:id="@+id/tv_errorId"
-                    android:layout_width="300dp"
-                    android:layout_height="20dp"
-                    android:text=""
-                    android:textSize="13dp"
-                    android:textColor="#E53935"
-                    />
-
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            >
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:endIconTint="#D50000"
-            android:gravity="center_horizontal"
-            app:endIconMode="password_toggle"
             app:hintEnabled="false"
             >
             <EditText
-                android:id="@+id/et_pw"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:background="@drawable/et_black"
-                android:hint="비밀번호"
-                android:textColorHint="@color/black"
-                android:gravity="center"
-                android:singleLine="true"
-                android:lines="1"
-                android:inputType="textPassword"
+                android:id="@+id/et_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="아이디(e-mail)"
                 />
-        </com.google.android.material.textfield.TextInputLayout>
-
             <TextView
-                android:id="@+id/tv_errorPw"
+                android:id="@+id/tv_errorId"
                 android:layout_width="300dp"
                 android:layout_height="20dp"
                 android:text=""
                 android:textSize="13dp"
                 android:textColor="#E53935"
                 />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        >
-
-        <TextView
-            android:id="@+id/tv_findPw"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="비밀번호 찾기"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:gravity="center_vertical"
-            />
-
-        <CheckBox
-            android:id="@+id/cb_autoLogin"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="자동 로그인"
-            android:layout_marginLeft="100dp"
-            android:layout_gravity="right"
-            android:checked="false"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        >
-
-        <Button
-            android:id="@+id/btn_Login"
-            android:layout_width="300dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="로그인"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:background="@drawable/button_round"
+            app:endIconTint="#E91E63"
+            app:endIconMode="password_toggle"
+            app:hintEnabled="false"
+            >
+            <EditText
+                android:id="@+id/et_pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호를 입력하세요"
+                android:inputType="textPassword"
+                />
 
-            />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_Signup"
+        <TextView
+            android:id="@+id/tv_errorPw"
             android:layout_width="300dp"
+            android:layout_height="20dp"
+            android:text=""
+            android:textSize="13dp"
+            android:textColor="#E53935"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="회원 가입"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_round"
-            />
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_findPw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="  비밀번호 찾기"
+                />
 
+            <CheckBox
+                android:id="@+id/cb_autoLogin"
+                android:gravity="right|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="자동로그인"
+                />
+        </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            >
+            <Button
+                android:id="@+id/btn_Login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="로그인"
+                android:textStyle="bold"
+                android:background="@drawable/button_round"
+                />
+
+            <Button
+                android:id="@+id/btn_Signup"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="회원가입"
+                android:textStyle="bold"
+                android:background="@drawable/button_round"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageButton
+                android:id="@+id/tv_google"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitEnd"
+                android:layout_marginRight="30dp"
+                android:background="@color/fui_transparent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/google"
+                />
+
+            <ImageButton
+                android:id="@+id/tv_kakao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitStart"
+                android:layout_marginLeft="30dp"
+                android:background="@color/fui_transparent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/kakao"
+                />
+
+
+
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        >
-
-        <TextView
-            android:id="@+id/tv_google"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/google"
-            />
-
-        <TextView
-            android:id="@+id/tv_kakao"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/kakao"
-            android:layout_marginLeft="38dp"
-            />
-
-    </LinearLayout>
-
 </LinearLayout>

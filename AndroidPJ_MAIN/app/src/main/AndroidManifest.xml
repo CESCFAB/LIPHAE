@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.OrderFinished"></activity>
+        <activity android:name=".UserSign.SignupActivity"></activity>
+        <activity android:name=".Activity.ProductReviewActivity" />
+        <activity android:name=".Activity.OrderFinished" />
         <activity android:name=".Activity.OrderdetailActivity" />
         <activity android:name=".Activity.RegisterAddress" />
         <activity android:name=".Test.TestSub01Activity" />
