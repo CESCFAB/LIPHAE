@@ -2,12 +2,14 @@ package com.android.androidpj_main.Adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.androidpj_main.Bean.Order;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 
 public class OrderAdapter extends BaseAdapter {
 
+    final static String TAG = "OrderAdapter";
     private Context mContext = null;
     private int layout = 0;
     private ArrayList<Order> data = null;
@@ -58,6 +61,7 @@ public class OrderAdapter extends BaseAdapter {
         TextView tv_orderprice = (TextView) convertView.findViewById(R.id.tv_orderprice);
         TextView tv_orderstate = (TextView) convertView.findViewById(R.id.tv_orderstate);
         TextView tv_orderdate = (TextView) convertView.findViewById(R.id.tv_orderdate);
+        Button btn_orderOK = (Button) convertView.findViewById(R.id.btn_orderOK);
 
         // WebView 세팅
         // Web Setting
@@ -85,6 +89,20 @@ public class OrderAdapter extends BaseAdapter {
         tv_orderprice.setText(String.valueOf(data.get(position).getPrdPrice()));
         tv_orderstate.setText(data.get(position).getOrdDelivery());
         tv_orderdate.setText(data.get(position).getOrdDate());
+
+        if(tv_orderstate.getText().equals("배송완료")){
+            btn_orderOK.setVisibility(View.VISIBLE);
+            btn_orderOK.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    btn_orderOK.setText("리뷰쓰기");
+                    btn_orderOK.setBackgroundColor(0x50ff0000);
+                }
+            });
+        } else {
+            btn_orderOK.setVisibility(View.INVISIBLE);
+
+        }
 
         return convertView;
 
