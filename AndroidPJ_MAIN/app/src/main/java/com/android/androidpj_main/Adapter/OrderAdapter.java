@@ -1,6 +1,7 @@
 package com.android.androidpj_main.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,7 +12,10 @@ import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.androidpj_main.Activity.ProductViewActivity;
+import com.android.androidpj_main.Activity.ReviewRegisterActivity;
 import com.android.androidpj_main.Bean.Order;
 import com.android.androidpj_main.R;
 import com.android.androidpj_main.Share.ShareVar;
@@ -97,17 +101,23 @@ public class OrderAdapter extends BaseAdapter {
                 public void onClick(View v) {
                     btn_orderOK.setText("리뷰쓰기");
                     btn_orderOK.setBackgroundColor(0x50ff0000);
+
+                    Intent intent = new Intent(v.getContext(), ReviewRegisterActivity.class);
+                    intent.putExtra("prdFilename", data.get(position).getPrdFilename());
+                    intent.putExtra("prdPrice", data.get(position).getPrdPrice());
+                    intent.putExtra("prdName", data.get(position).getPrdName());
+                    v.getContext().startActivity(intent);
+
+                    Toast.makeText(v.getContext(), "리뷰 작성 화면으로 이동", Toast.LENGTH_SHORT).show();
                 }
             });
         } else {
             btn_orderOK.setVisibility(View.INVISIBLE);
-
         }
 
         return convertView;
 
     }
-
 
 
 
