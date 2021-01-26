@@ -86,7 +86,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:src="@drawable/ic_shopping_cart"
-             />
+            />
 
     <Button
         android:id="@+id/btn_bottombuy"

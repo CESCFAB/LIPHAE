@@ -418,8 +418,11 @@ public class LoginActivity extends Activity {
 
                                 //SharedPreference에 저장.(아이디와 패스워드값)
 
+
                                 sid = Eid.getText().toString().trim();
                                 spw = Epw.getText().toString().trim();
+                                // PreferenceManager 이메일 보내주기
+                                PreferenceManager.setString(LoginActivity.this, "email", sid);
 
 
                                 SharedPreferences loginInfo = getSharedPreferences("setting",0);
