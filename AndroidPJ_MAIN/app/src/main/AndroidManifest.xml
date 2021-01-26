@@ -18,6 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.ReviewRegisterActivity"/>
+        <activity android:name=".Activity.ReviewUpdateActivity"/>
+        <activity android:name=".Activity.MyReviewActivity"/>
         <activity android:name=".UserSign.SignupActivity"></activity>
         <activity android:name=".Activity.ProductReviewActivity" />
         <activity android:name=".Activity.OrderFinished" />

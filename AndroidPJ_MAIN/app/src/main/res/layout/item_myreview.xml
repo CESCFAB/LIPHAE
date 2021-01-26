@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="6dp"
+    android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:background="@color/black"
+            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:layout_margin="2dp"
+            android:orientation="horizontal">
+
+            <WebView
+                android:id="@+id/myReview_img"
+                android:layout_gravity="center"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="5dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="7"
+                    android:orientation="horizontal"
+                    >
+                <TextView
+                    android:id="@+id/myReview_prdBrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_gravity="left"
+                    android:gravity="center_vertical"
+                    android:text="나의 리뷰 상품 브랜드"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="15dp"
+                    android:layout_weight="1"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_review_update"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/review_update"
+                        android:scaleType="fitCenter"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="8dp"
+                        />
+                    <ImageButton
+                        android:id="@+id/review_delete"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/review_delete"
+                        android:scaleType="fitCenter"
+                        android:layout_weight="3"
+                        android:layout_marginLeft="8dp"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/myReview_prdName"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_gravity="left"
+                    android:gravity="center_vertical"
+                    android:text="나의 리뷰 상품 이름"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="15dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:layout_margin="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/myReview_star"
+                    android:textColor="#000000"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="리뷰 별점"
+                    android:textStyle="bold"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:layout_margin="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/myReview_content"
+                android:textColor="#000000"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="리뷰 내용"
+                android:textSize="15dp"/>
+        </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

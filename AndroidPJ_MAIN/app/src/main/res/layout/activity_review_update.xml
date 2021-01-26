@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.ReviewRegisterActivity">
+    tools:context=".Activity.ReviewUpdateActivity">
 
     <TextView
-        android:id="@+id/review_tvprdNo"
+        android:id="@+id/update_PrdNo"
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="리뷰 쓰기 창"
+        android:text="리뷰 수정 창"
         android:textSize="30dp"
         android:gravity="center"
         android:layout_gravity="center"
@@ -26,7 +26,7 @@
         android:orientation="horizontal"
         >
     <WebView
-        android:id="@+id/register_prdImg"
+        android:id="@+id/update_prdImg"
         android:layout_gravity="center"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -40,7 +40,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/register_prdName"
+                android:id="@+id/update_prdBrand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -50,7 +50,7 @@
                 />
 
             <TextView
-                android:id="@+id/register_prdPrice"
+                android:id="@+id/update_prdName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -69,7 +69,7 @@
         >
 
         <Spinner
-            android:id="@+id/review_star_spinner"
+            android:id="@+id/update_star_spinner"
             android:entries="@array/별점"
             android:layout_width="match_parent"
             android:layout_marginLeft="100dp"
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/tv_star"
+            android:id="@+id/update_tvStar"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
             />
 
         <EditText
-            android:id="@+id/et_review"
+            android:id="@+id/update_etReview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="리뷰를 작성해주세요."
@@ -97,13 +97,13 @@
 
     </LinearLayout>
     <Button
-        android:id="@+id/btn_register_review"
+        android:id="@+id/btn_update_review"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="리뷰 작성"
+        android:text="리뷰 수정"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:textStyle="bold"

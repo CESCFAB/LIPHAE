@@ -20,6 +20,7 @@ import com.android.androidpj_main.Bean.Order;
 import com.android.androidpj_main.R;
 import com.android.androidpj_main.Share.ShareVar;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class OrderAdapter extends BaseAdapter {
@@ -30,6 +31,7 @@ public class OrderAdapter extends BaseAdapter {
     private ArrayList<Order> data = null;
     private LayoutInflater inflater = null;
     String urlAddr;
+    DecimalFormat myFormatter;
 
     public OrderAdapter(Context mContext, int layout, ArrayList<Order> data) {
         this.mContext = mContext;
@@ -89,8 +91,11 @@ public class OrderAdapter extends BaseAdapter {
                 "</html>";
         wv_orderimg.loadData(htmlData,"text/html", "UTF-8");
 
+        myFormatter = new DecimalFormat("###,###");
+        String formattedStringPrice = myFormatter.format(data.get(position).getPrdPrice());
+
         tv_ordername.setText(data.get(position).getPrdName());
-        tv_orderprice.setText(String.valueOf(data.get(position).getPrdPrice()));
+        tv_orderprice.setText(formattedStringPrice+" 원");
         tv_orderstate.setText(data.get(position).getOrdDelivery());
         tv_orderdate.setText(data.get(position).getOrdDate());
 
@@ -104,8 +109,9 @@ public class OrderAdapter extends BaseAdapter {
 
                     Intent intent = new Intent(v.getContext(), ReviewRegisterActivity.class);
                     intent.putExtra("prdFilename", data.get(position).getPrdFilename());
-                    intent.putExtra("prdPrice", data.get(position).getPrdPrice());
+                    intent.putExtra("prdPrice",String.valueOf(data.get(position).getPrdPrice()));
                     intent.putExtra("prdName", data.get(position).getPrdName());
+                    intent.putExtra("ordNo", String.valueOf(data.get(position).getOrdNo()));
                     v.getContext().startActivity(intent);
 
                     Toast.makeText(v.getContext(), "리뷰 작성 화면으로 이동", Toast.LENGTH_SHORT).show();

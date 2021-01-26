@@ -33,19 +33,19 @@ import com.android.androidpj_main.Share.ShareVar;
 import java.util.ArrayList;
 
 // 21.01.25 지은 완료
-public class ReviewRegisterActivity extends AppCompatActivity {
+public class ReviewUpdateActivity extends AppCompatActivity {
 
-    final static String TAG = "ReviewRegisterActivity";
+    final static String TAG = "ReviewUpdateActivity";
 
-    WebView register_prdImg;
-    TextView register_prdName, register_prdPrice;
-    String prdImg, prdName, prdPrice, ordNo;
+    WebView update_prdImg;
+    TextView update_prdName, update_prdPrice;
+    String prdImg, prdName, prdBrand, ordNo, ordReview, ordStar;
 
-    TextView tv_star;
-    Spinner review_star_spinner;
+    TextView update_tvStar;
+    Spinner update_star_spinner;
 
-    Button btn_register_review;
-    EditText et_review;
+    Button btn_update_review;
+    EditText update_etReview;
 
 
     String urlAddr_review = null;
@@ -56,45 +56,54 @@ public class ReviewRegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_review_register);
-        setTitle("리뷰 작성 창");
+        setContentView(R.layout.activity_review_update);
+        setTitle("리뷰 수정 창");
 
-        register_prdImg = findViewById(R.id.register_prdImg);   // 내가 구매한 상품 사진
-        register_prdName = findViewById(R.id.register_prdName); // 내가 구매한 상품 이름
-        register_prdPrice = findViewById(R.id.register_prdPrice);   // 내가 구매한 상품 가격
+        update_prdImg = findViewById(R.id.update_prdImg);   // 내가 구매한 상품 사진
+        update_prdName = findViewById(R.id.update_prdName); // 내가 구매한 상품 이름
+        update_prdPrice = findViewById(R.id.update_prdBrand);   // 내가 구매한 상품 브랜드
 
         Intent intent = getIntent();
         prdImg = intent.getStringExtra("prdFilename");
         prdName = intent.getStringExtra("prdName");
-        prdPrice = intent.getStringExtra("prdPrice");
-        ordNo = intent.getStringExtra("ordNo");
+        prdBrand = intent.getStringExtra("prdBrand");
+        ordNo = intent.getStringExtra("orderNo");
+        ordReview = intent.getStringExtra("ordReview");
+        ordStar = intent.getStringExtra("ordStar");
 
 
-        register_prdName.setText(prdName);
-        register_prdPrice.setText(prdPrice + " 원");
-        Log.v(TAG, prdName);
+        update_prdPrice.setText("[ "+ prdBrand + " ]");
+        update_prdPrice.setText(prdName);
 
-        tv_star = findViewById(R.id.tv_star);
-        review_star_spinner = findViewById(R.id.review_star_spinner);
+        update_tvStar = findViewById(R.id.update_tvStar);
 
-        review_star_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+        // 별점 스피너 ***************************************
+        update_star_spinner = findViewById(R.id.update_star_spinner);
+
+        update_star_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                tv_star.setText((CharSequence) parent.getItemAtPosition(position));
+                update_tvStar.setText((CharSequence) parent.getItemAtPosition(position));
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
+        // ***************************************
 
         //
-        btn_register_review = findViewById(R.id.btn_register_review);
-        btn_register_review.setOnClickListener(registerOnClickListener);
+        btn_update_review = findViewById(R.id.btn_update_review);
+        btn_update_review.setOnClickListener(registerOnClickListener);
 
-        et_review = findViewById(R.id.et_review);
+        update_etReview = findViewById(R.id.update_etReview);
 
         // 저장된 아이디(이메일) 값
-        userEmail = PreferenceManager.getString(ReviewRegisterActivity.this, "email");
+        userEmail = PreferenceManager.getString(ReviewUpdateActivity.this, "email");
+
+
+        update_etReview.setText(ordReview);
+
     }
 
 
@@ -102,16 +111,16 @@ public class ReviewRegisterActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.btn_register_review:
-                    String review_star = tv_star.getText().toString();
-                    String review_content = et_review.getText().toString();
+                case R.id.btn_update_review:
+                    String review_star = update_tvStar.getText().toString();
+                    String review_content = update_etReview.getText().toString();
 
 
-                    urlAddr_review = "http://" + ShareVar.macIP + ":8080/JSP/ReviewRegister.jsp?ordReview=" + review_content;
+                    urlAddr_review = "http://" + ShareVar.macIP + ":8080/JSP/MyReview_Update.jsp?ordReview=" + review_content;
                     urlAddr_review = urlAddr_review +"&ordStar="+ review_star +"&userEmail=" + userEmail+"&ordNo="+ordNo;
 
                     connectRegisterReview();
-                    Toast.makeText(ReviewRegisterActivity.this, prdName+" 상품에 대한 리뷰가 작성되었습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ReviewUpdateActivity.this, prdName+" 상품에 대한 리뷰가 수정되었습니다.", Toast.LENGTH_SHORT).show();
 
                     break;
             }
@@ -122,7 +131,7 @@ public class ReviewRegisterActivity extends AppCompatActivity {
         // 리뷰 입력 받은값을 업데이트 시킴
         private void connectRegisterReview(){
             try {
-                CUDNetworkTask reviewNetworkTask = new CUDNetworkTask(ReviewRegisterActivity.this, urlAddr_review);
+                CUDNetworkTask reviewNetworkTask = new CUDNetworkTask(ReviewUpdateActivity.this, urlAddr_review);
                 reviewNetworkTask.execute().get();
 
             }catch (Exception e){

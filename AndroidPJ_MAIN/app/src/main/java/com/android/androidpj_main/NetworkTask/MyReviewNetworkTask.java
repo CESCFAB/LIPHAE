@@ -5,7 +5,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.android.androidpj_main.Bean.Order;
+import com.android.androidpj_main.Bean.MyReview;
+import com.android.androidpj_main.Bean.Review;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,25 +18,21 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-///////////////////////////////////////////////////////////////////////////
-//
-// 21.01.14 세미 생성
-//
-///////////////////////////////////////////////////////////////////////////
 
-public class OrderNetworkTask extends AsyncTask<Integer, String, Object> {
+// 21.01.25 지은 추가  ***************************************
+public class MyReviewNetworkTask extends AsyncTask<Integer, String, Object> {
 
-    final static String TAG = "OrderNetworkTask";
+    final static String TAG = "MyReviewNetworkTask";
     Context context = null;
     String mAddr = null;
     ProgressDialog progressDialog = null;
-    ArrayList<Order> orders; // 불러와야 해서
+    ArrayList<MyReview> myReviews; // 불러와야 해서
 
     //Constructor
-    public OrderNetworkTask(Context context, String mAddr) {
+    public MyReviewNetworkTask(Context context, String mAddr) {
         this.context = context;
         this.mAddr = mAddr;
-        this.orders = new ArrayList<Order>();    //직접 침 : 이유는 꼭 쓸 필요성은 없지만 arraylist를 사용하기 위해 생성해줌
+        this.myReviews = new ArrayList<MyReview>();    //직접 침 : 이유는 꼭 쓸 필요성은 없지만 arraylist를 사용하기 위해 생성해줌
         Log.v(TAG, "Start : "+ mAddr);
     }
 
@@ -93,7 +90,7 @@ public class OrderNetworkTask extends AsyncTask<Integer, String, Object> {
                 e.printStackTrace();
             }
         }
-        return orders;
+        return myReviews;
     }
 
     @Override
@@ -121,27 +118,34 @@ public class OrderNetworkTask extends AsyncTask<Integer, String, Object> {
             Log.v(TAG, "order s값:::::" + s);
             // 배열이기 때문에 [] 이렇게 시작
             JSONObject jsonObject = new JSONObject(s);
-            JSONArray jsonArray = new JSONArray(jsonObject.getString("order_select"));
+            JSONArray jsonArray = new JSONArray(jsonObject.getString("MyReview_Select"));
             // object 가 읽어줌
-            //students_info는 테이블 명이라고 생각할 것
+            //review_select는 테이블 명이라고 생각할 것
 
-            orders.clear();
+            myReviews.clear();
 
             // object 별로 불러오는 것 {이 안의 묶음}
             for (int i=0; i<jsonArray.length(); i++){
                 JSONObject jsonObject1 = (JSONObject) jsonArray.get(i);
 
-                int ordNo = jsonObject1.getInt("orderNo");
-                String ordDate = jsonObject1.getString("ordDate");
-                String ordDelivery = jsonObject1.getString("ordDelivery");
+
+
+
+                String user_userEmail = jsonObject1.getString("user_userEmail");
+                int prdNo = jsonObject1.getInt("prdNo");
+                int orderNo = jsonObject1.getInt("orderNo");
+                int goods_prdNo = jsonObject1.getInt("goods_prdNo");
+                String prdFilename = jsonObject1.getString("prdFilename");
+                String prdBrand = jsonObject1.getString("prdBrand");
                 String prdName = jsonObject1.getString("prdName");
-                int prdPrice = jsonObject1.getInt("prdPrice");
-                String prdFilename = jsonObject1.getString("prdFileName");
+                String ordReview = jsonObject1.getString("ordReview");
+                String ordStar = jsonObject1.getString("ordStar");
 
 
-                Order order = new Order(ordNo, ordDate, ordDelivery, prdName, prdPrice, prdFilename);
+                MyReview myReview = new MyReview(user_userEmail, prdNo, orderNo, goods_prdNo, prdFilename,
+                        prdBrand, prdName, ordReview, ordStar);
 
-                orders.add(order);
+                myReviews.add(myReview);
             }
 
 

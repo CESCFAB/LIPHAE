@@ -26,6 +26,7 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.fragment.app.Fragment;
 
+import com.android.androidpj_main.Activity.MyReviewActivity;
 import com.android.androidpj_main.Activity.MyViewActivity;
 import com.android.androidpj_main.Activity.OrderdetailActivity;
 import com.android.androidpj_main.Bean.User;
@@ -200,6 +201,9 @@ public class Frmt_Mypage extends Fragment {
                     break;
                 case R.id.myReview:
                     Toast.makeText(getActivity(), "나의 리뷰 조회", Toast.LENGTH_SHORT).show();
+                    Intent Rintent = new Intent(getActivity(), MyReviewActivity.class);
+
+                    startActivity(Rintent);
                     break;
             }
         }
@@ -233,9 +237,9 @@ public class Frmt_Mypage extends Fragment {
             }
         }
     };
-
-
     // ****************************************************************
+
+
     // 이미지 업로드 관련.
     View.OnClickListener mClickListener = new View.OnClickListener() {
         @Override
