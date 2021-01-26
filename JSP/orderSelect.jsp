@@ -11,7 +11,7 @@
  	String id_mysql = "root";
      String pw_mysql = "qwer1234";
      
-    String WhereDefault = "select o.ordNo, o.ordDate, o.ordDelivery, p.prdName, p.prdPrice, p.prdFileName from orderinfo o, orderdetail d, product p";
+    String WhereDefault = "select d.orderNo, o.ordDate, o.ordDelivery, p.prdName, p.prdPrice, p.prdFileName from orderinfo o, orderdetail d, product p";
     String Condition = " where o.ordNo = d.orderinfo_ordNo and d.goods_prdNo = p.prdNo and o.user_userEmail = '" + user_email + "'";
     int count = 0;
     
@@ -36,7 +36,7 @@
 %>            
 			
 			{
-            "ordNo" : "<%=rs.getString(1) %>", 
+            "orderNo" : "<%=rs.getString(1) %>", 
 			"ordDate" : "<%=rs.getString(2) %>", 
 			"ordDelivery" : "<%=rs.getString(3) %>",  
 			"prdName" : "<%=rs.getString(4) %>", 
