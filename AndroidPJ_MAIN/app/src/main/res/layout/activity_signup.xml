@@ -1,9 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserSign.SignupActivity">
+    tools:context=".Activity.ProductViewActivity"
+    android:background="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_marginVertical="20dp"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sign_circle_1"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingHorizontal="40dp"
+        android:background="@color/white"
+        >
+
+        <!--        주문자 정보-->
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconTint="#000000"
+
+            app:hintEnabled="false"
+            android:layout_marginVertical="5dp"
+            >
+            <EditText
+                android:id="@+id/signup_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="아이디를 입력해주세요"
+                android:background="@drawable/border"
+                android:layout_marginVertical="5dp"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                />
+            <TextView
+                android:id="@+id/signup_error_email"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:text=""
+                android:textSize="13dp"
+                android:textColor="#E53935"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconTint="#000000"
+            app:endIconMode="password_toggle"
+            app:hintEnabled="false"
+            android:layout_marginVertical="5dp"
+            >
+            <EditText
+                android:id="@+id/signup_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="비밀번호를 입력하세요"
+                android:inputType="textPassword"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                />
+            <TextView
+                android:id="@+id/signup_error_password"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:text=""
+                android:textSize="13dp"
+                android:textColor="#E53935"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconTint="#000000"
+            app:endIconMode="password_toggle"
+            app:hintEnabled="false"
+            android:layout_marginVertical="5dp"
+            >
+            <EditText
+                android:id="@+id/signup_password_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="비밀번호를 확인해주세요"
+                android:inputType="textPassword"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                />
+            <TextView
+                android:id="@+id/signup_error_pwConfirm"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:text=""
+                android:textSize="13dp"
+                android:textColor="#E53935"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <EditText
+            android:id="@+id/signup_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="이름을 입력해주세요"
+            android:background="@drawable/border"
+            android:layout_marginVertical="5dp"
+
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="연락처"
+            android:layout_marginRight="100dp"
+            android:textColor="@color/black"
+            android:layout_marginVertical="20dp"
+            android:textSize="15dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <EditText
+                android:id="@+id/telno1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="010"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:textSize="20dp"
+                android:inputType="number"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+            <EditText
+                android:id="@+id/telno2"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="0000"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:textSize="20dp"
+                android:inputType="number"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+            <EditText
+                android:id="@+id/telno3"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="0000"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:textSize="20dp"
+                android:inputType="number"
+                />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+    <Button
+        android:id="@+id/btn_goto_gender"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="다음"
+        android:background="@drawable/border"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+
+
+</LinearLayout>
